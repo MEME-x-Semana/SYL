@@ -30,6 +30,11 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+#Le indica a Django que va a haber una app con este nombre
+CUSTOM_APPS = [
+    "syl_app"
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+#Hace que django reconozco l app 
+INSTALLED_APPS += CUSTOM_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
