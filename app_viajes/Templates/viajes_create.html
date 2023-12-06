@@ -1,0 +1,16 @@
+{% extends 'base_viajes.html' %}
+{% block content %}
+
+<main>
+    <div class="main-color-viajes">
+        <h1>CREAR VIAJE</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div>{{form.as_p}}</div>
+            <input type="submit" value="{{ tipo }}" />
+        </form>
+
+        <a href="{% url 'viajes:all' %}">Volvamos al Inicio</a>
+    </div>
+</main>
+{% endblock %}

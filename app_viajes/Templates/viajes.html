@@ -1,0 +1,34 @@
+{% extends 'base_viajes.html' %}
+
+{% block content %}
+
+<main>
+    <div class="main-color-viajes">
+        <h1>Todos los vinos</h1>
+        <h2><a href="{% url 'viajes:create' %}">CREAR VINO</a></h2>
+        {% for viajes in viajes_list%}
+        <div class="list">
+            <span>
+                <p>{{forloop.counter}}</p>
+            </span>
+            <span>
+                <p>{{viajes.nombre}}</p>
+            </span>
+            <span>
+                <label for="">Detalle: </label>
+                <a href="{% url 'viajes:detail' vino.id %}">+</a>
+            </span>
+            <span>
+                <label for="">Editar: </label>
+                <a href="{% url 'viajes:update' vino.id %}">+</a>
+            </span>
+            <span>
+                <label for="">Borrar: </label>
+                <a href="{% url 'viajes:delete' vino.id %}">+</a>
+            </span>
+        </div>
+
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}
