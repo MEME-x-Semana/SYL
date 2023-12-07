@@ -26,6 +26,7 @@
         <a href="#companias" class="nav-item">Compañías</a>
         <a href="#nosotros" class="nav-item">Sobre Nosotros</a>
         <a href="#fromulario" class="nav-item">Contacto</a>
+        <a href="{% url 'cruceros:all' %}" class="nav-item">Admin</a>
       </div>
       <img class="icon_menu" src="{% static './media/img/icon _menu.svg' %}" alt="logo menu hamburguesa">
       <a href="#"><img class="syl_logo" src="{% static './media/img/SYL_logo.svg' %}" alt="SeaYouLater logo"></a>
@@ -39,6 +40,7 @@
           <li><a href="#companias">Compañías</a></li>
           <li><a href="#nosotros">Sobre Nosotros</a></li>
           <li><a href="#fromulario">Contacto</a></li>
+          <li><a href="{% url 'cruceros:all' %}">Admin</a></li>
         </ul>
       </div>
     </nav>
@@ -51,9 +53,12 @@
         <h1>Sea You Later</h1>
         <h3>Tu Agencia de Cruceros</h3>
       </div>
-      <img class="img_portada_xs" src="{% static './media/img/cruceroXS.webp' %}" alt="portada/imagen de un crucero al atardecer">
-      <img class="img_portada_sm" src="{% static './media/img/cruceroSM.webp' %}" alt="portada/imagen de un crucero al atardecer">
-      <img class="img_portada_xl" src="{% static './media/img/cruceroXL.webp' %}" alt="portada/imagen de un crucero al atardecer">
+      <img class="img_portada_xs" src="{% static './media/img/cruceroXS.webp' %}"
+        alt="portada/imagen de un crucero al atardecer">
+      <img class="img_portada_sm" src="{% static './media/img/cruceroSM.webp' %}"
+        alt="portada/imagen de un crucero al atardecer">
+      <img class="img_portada_xl" src="{% static './media/img/cruceroXL.webp' %}"
+        alt="portada/imagen de un crucero al atardecer">
     </section>
 
     <!-- Sección formulario de busqueda -->
@@ -216,9 +221,11 @@
       <h2>Compañías</h2>
       <div class="logos">
         <img src="{% static './media/img/logos_companias/msc_cruises_logo.webp' %}" alt="logo de MSC Cruceros">
-        <img src="{% static './media/img/logos_companias/royal_caribbean_group_logo.webp' %}" alt="logo de Royal Caribbean Group">
+        <img src="{% static './media/img/logos_companias/royal_caribbean_group_logo.webp' %}"
+          alt="logo de Royal Caribbean Group">
         <img src="{% static './media/img/logos_companias/viking_cruises_logo.webp' %}" alt="logo de Viking Cruises">
-        <img src="{% static './media/img/logos_companias/norwegian-cruise-lin' %}e-logo.webp" alt="logo de Norwegian Cruise Line">
+        <img src="{% static './media/img/logos_companias/norwegian-cruise-lin' %}e-logo.webp"
+          alt="logo de Norwegian Cruise Line">
         <img src="{% static './media/img/logos_companias/seabourn_logo.webp' %}" alt="logo de Seabourn">
         <img src="{% static './media/img/logos_companias/star_cruises_logo.webp' %}" alt="logo de Star Cruises">
         <img src="{% static './media/img/logos_companias/carnival_cruises_logo.webp' %}" alt="logo de Carnival Cruises">

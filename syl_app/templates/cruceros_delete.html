@@ -1,0 +1,17 @@
+{% extends 'index.html' %} {% load static %} {% block content %}
+
+
+<main>
+  <div class="main-color-viajes">
+    <h1>Estas seguro ue deseas borrar este viaje?</h1>
+    <h2>{{cruceros.nombre}}</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div>{{form.as_p}}</div>
+      <input type="submit" value="{{ tipo }}" />
+    </form>
+
+    <a href="{% url 'cruceros:all' %}">Cancelar</a>
+  </div>
+</main>
+{% endblock %}

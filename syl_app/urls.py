@@ -18,3 +18,4 @@ urlpatterns = [
     path("<int:pk>/delete/", CrucerosDeleteView.as_view(), name="delete")
 
 ]
+

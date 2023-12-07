@@ -24,23 +24,23 @@ class CrucerosListView(CrucerosBaseView,ListView):
     ...
 
 class CrucerosDetailView(CrucerosBaseView,DetailView):
-    template_name = "crucero_detail.html"
+    template_name = "cruceros_detail.html"
 
 class CrucerosCreateView(CrucerosBaseView,CreateView):
-    template_name = "crucero_create.html"
+    template_name = "cruceros_create.html"
     extra_context = {
         "tipo": "Crear viaje"
     }
 
 
 class CrucerosUpdateView(CrucerosBaseView,UpdateView):
-    template_name = "crucero_create.html"
+    template_name = "cruceros_create.html"
     extra_context = {
         "tipo": "Actualizar viaje"
     }
 
 class CrucerosDeleteView(CrucerosBaseView,DeleteView):
-    template_name = "crucero_delete.html"
+    template_name = "cruceros_delete.html"
     extra_context = {
         "tipo": "Borrar viaje"
     }
