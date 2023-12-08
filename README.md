@@ -7,6 +7,7 @@ Este repositorio contiene la documentación detallada del proyecto de desarrollo
 - Axel Criado
 - Fabricio Barreto
 - Flavia S. Briglia
+- Karina Bianco
 
 ## Fase de Inicio
 En el primer mes de nuestro proyecto, llevamos a cabo reuniones virtuales para conocernos, debatir las ideas y establecer los objetivos del proyecto.
@@ -45,3 +46,4 @@ El proyecto de desarrollo web "See You Later" se ha completado con éxito gracia
     - axelivancriado@gmail.com
     - fabrib40@gmail.com
     - fbrig87@gmail.com
+    - karina_bianco@hotmail.com
