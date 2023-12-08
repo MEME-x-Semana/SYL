@@ -2,8 +2,8 @@
 
 
 <main>
-  <div class="main-color-viajes">
-    <h1>{{cruceros.nombre}}</h1>
+  <section class="viajes_container">
+    <h2>{{cruceros.nombre}}</h2>
     {% for label, value in cruceros.get_fields %}
 
     <p>{{label | upper}}</p>
@@ -12,6 +12,6 @@
     {% endfor %}
 
     <a href="{% url 'cruceros:all' %}">BACK</a>
-  </div>
+  </section>
 </main>
 {% endblock %}

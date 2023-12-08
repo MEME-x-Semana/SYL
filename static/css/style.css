@@ -8,6 +8,7 @@
 @import "./testimonios.css";
 @import "./formulario.css";
 @import "./footer.css";
+@import "./app_templates.css";
 
 * {
   margin: 0;

@@ -1,41 +1,42 @@
-{% extends 'index.html' %} {% load static %} 
+{% extends 'index.html' %} {% load static %}
 
 {% block content %}
-
 <main>
-  <div class="main-color-cruceros">
-    <h1>Viajes</h1>
-    <h2><a href="{% url 'cruceros:create' %}">CREAR VIAJE</a></h2>
-    
+  <section class="viajes_container">
+    <h2>Viajes</h2>
+    <a class="formulario-form-button a_button" href="{% url 'cruceros:create' %}">Agregar viaje</a>
+
     {% for cruceros in cruceros_list %}
     <div class="list">
 
-      <!-- <ul>
-          <li>Continente al que viaja: {{cruceros.continente}}</li>
-          <li>Puerto del que sale: {{cruceros.puerto}}</li>
-          <h3>Precio del viaje: {{cruceros.precio}}</h3>
-        </ul> -->
+      <ul class="crucero_lista">
+        <li>Continente al que viaja: {{cruceros.continente}}</li>
+        <li>Puerto del que sale: {{cruceros.puerto}}</li>
+        <li><strong>Precio del viaje: {{cruceros.precio}}</strong></li>
+      </ul>
+
       <span>
         <p>{{forloop.counter}}</p>
       </span>
       <span>
         <p>{{cruceros.nombre}}</p>
       </span>
+      
       <span>
         <label for="">Detalle: </label>
-        <a href="{% url 'cruceros:detail' cruceros.id %}">+</a>
+        <a href="{% url 'cruceros:detail' cruceros.id %}">Detalle</a>
       </span>
       <span>
         <label for="">Editar: </label>
-        <a href="{% url 'cruceros:update' cruceros.id %}">+</a>
+        <a href="{% url 'cruceros:update' cruceros.id %}">Editar</a>
       </span>
       <span>
         <label for="">Borrar: </label>
-        <a href="{% url 'cruceros:delete' cruceros.id %}">+</a>
+        <a href="{% url 'cruceros:delete' cruceros.id %}">Borrar</a>
       </span>
     </div>
 
     {% endfor %}
-  </div>
+  </section>
 </main>
 {% endblock %}

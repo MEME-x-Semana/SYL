@@ -3,8 +3,8 @@
 {% block content %}
 
 <main>
-  <div class="main-color-viajes">
-    <h1>CREAR VIAJE</h1>
+  <section class="viajes_container">
+    <h2>CREAR VIAJE</h2>
     <form method="post">
       {% csrf_token %}
       <div>{{form.as_p}}</div>
@@ -12,6 +12,6 @@
     </form>
 
     <a href="{% url 'cruceros:all' %}">Volvamos al Inicio</a>
-  </div>
+  </section>
 </main>
 {% endblock %}
