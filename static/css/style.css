@@ -36,6 +36,13 @@ section h2 {
   color: var(--color-primary);
 }
 
+h3 {
+  text-align: center;
+  margin: 15px 5px 15px 10px ;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+}
+
 
 .video{
   display: none;

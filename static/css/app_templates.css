@@ -5,6 +5,14 @@
   justify-content: center;
 }
 
+.form-field{
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  width: 22rem;
+  max-width: 100%;
+}
+
 .list{
   background-color:  rgba(2, 48, 71, 0.75);
   padding: 1rem;
@@ -32,4 +40,10 @@
   margin: 1rem;
   padding: 0.5rem;
   font-size: small;
+}
+
+.a_button--back{
+  background: rgb(90, 89, 89);
+  width: 12rem;
+  font-size: medium;
 }

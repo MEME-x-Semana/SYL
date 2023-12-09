@@ -1,17 +1,23 @@
-{% extends 'index.html' %} {% load static %} 
+{% extends 'index.html' %} {% load static %}
 
 {% block content %}
 
-<main>
   <section class="viajes_container">
     <h2>CREAR VIAJE</h2>
-    <form method="post">
-      {% csrf_token %}
-      <div>{{form.as_p}}</div>
-      <input type="submit" value="{{ tipo }}" />
-    </form>
+    <div class="viajes_create">
+      <form method="post">
 
-    <a href="{% url 'cruceros:all' %}">Volvamos al Inicio</a>
+          {% for field in form %}
+          <div class="form-field">
+            {{ field.label_tag }}
+            {{ field }}
+            {{ field.errors }}
+          </div>
+          {% endfor %}
+        <input class="formulario-form-button a_button" type="submit" value="{{ tipo }}" />
+        </form>
+    </div>
+    <a class="formulario-form-button a_button a_button--back" href="{% url 'cruceros:all' %}">Volvamos al Inicio</a>
   </section>
-</main>
+
 {% endblock %}
