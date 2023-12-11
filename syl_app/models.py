@@ -4,6 +4,7 @@ from django.db.models import Model
 
 # Create your models here.
 class Cruceros(Model):
+<<<<<<< Updated upstream
     """
     Atributos de clase que son usadas por herencia de la clase Model
 
@@ -44,6 +45,43 @@ class Cruceros(Model):
         ("ID 13: Ushuaia", "Ushuaia"),
         ("ID 14: Rio de Janeiro", "Rio de Janeiro"),
         ("ID 15: Recife", "Recife"),
+=======
+    companias_choices = [
+        ("MSC", "MSC"),
+        ("RYG", "RYG"),
+        ("Viking", "Viking"),
+        ("NCL", "NCL"),
+        ("Seabourn", "Seabourn"),
+        ("Star Cruises", "Star Cruises"),
+        ("Carnival", "Carnival"),
+        ("Costa", "Costa"),
+        ("AIDA", "AIDA"),
+    ]
+
+    continentes_choices = [
+        ("Sudamerica", "Sudamerica"),
+        ("Caribe", "Caribe"),
+        ("Europa", "Europa"),
+        ("Asia", "Asia"),
+    ]
+
+    puertos_choices = [
+        ("Palermo", "Palermo"),
+        ("Bari", "Bari"),
+        ("Barcelona", "Barcelona"),
+        ("Valencia", "Valencia"),
+        ("Marsella", "Marsella"),
+        ("Lorient", "Lorient"),
+        ("La Habana", "La Habana"),
+        ("Puerto Príncipe", "Puerto Príncipe"),
+        ("Kingston", "Kingston"),
+        ("Hong Kong", "Hong Kong"),
+        ("Tokio", "Tokio"),
+        ("Buenos Aires", "Buenos Aires"),
+        ("Ushuaia", "Ushuaia"),
+        ("Rio de Janeiro", "Rio de Janeiro"),
+        ("Recife", "Recife"),
+>>>>>>> Stashed changes
     ]
 
     compania = models.CharField(max_length=100, choices=companias_choices)

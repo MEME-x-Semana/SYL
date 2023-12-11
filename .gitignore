@@ -1,6 +1,23 @@
+<<<<<<< Updated upstream
 # Ignorar directorios y archivos generados localmente
 .vscode/
 __pycache__/
 
 # Ignorar entorno virtual
 venv/
+=======
+<<<<<<< HEAD
+.venv/
+
+__pycache__/
+*.pyc
+*.pyo
+=======
+# Ignorar directorios y archivos generados localmente
+.vscode/
+__pycache__/
+
+# Ignorar entorno virtual
+venv/
+>>>>>>> 8781d23 (dev-flafla integrate mysql and models)
+>>>>>>> Stashed changes
