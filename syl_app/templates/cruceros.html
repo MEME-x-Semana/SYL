@@ -9,32 +9,27 @@
     {% for cruceros in cruceros_list %}
     <div class="list">
 
-      <ul class="crucero_lista">
-        <li>Empresa: {{cruceros.compania}}</li>
-        <li>Continente al que viaja: {{cruceros.continente}}</li>
-        <li>Puerto del que sale: {{cruceros.puerto}}</li>
-        <li><strong>Precio del viaje: {{cruceros.precio}}</strong></li>
-      </ul>
-
-      <span>
-        <p>{{forloop.counter}}</p>
-      </span>
-      <span>
-        <p>{{cruceros.nombre}}</p>
+      <span class="circle_conteiner">
+        <h4 class="circle">{{forloop.counter}}</h4>
       </span>
 
-      <span>
-        <label for="">Detalle: </label>
-        <a href="{% url 'cruceros:detail' cruceros.id %}">Detalle</a>
-      </span>
-      <span>
-        <label for="">Editar: </label>
-        <a href="{% url 'cruceros:update' cruceros.id %}">Editar</a>
-      </span>
-      <span>
-        <label for="">Borrar: </label>
-        <a href="{% url 'cruceros:delete' cruceros.id %}">Borrar</a>
-      </span>
+      <div  class="card_list">
+        <h5> Viaje a {{cruceros.continente}}</h5>
+        <p> Desde {{cruceros.puerto}}</p>
+      </div>
+
+      <div class="buttons_list">
+        <span>
+          <a class="button2" href="{% url 'cruceros:detail' cruceros.id %}">Detalle</a>
+        </span>
+        <span>
+          <a class="button2" href="{% url 'cruceros:update' cruceros.id %}">Editar</a>
+        </span>
+        <span>
+          <a class="button2" href="{% url 'cruceros:delete' cruceros.id %}">Borrar</a>
+        </span>
+      </div>
+
     </div>
 
     {% endfor %}

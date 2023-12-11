@@ -3,45 +3,42 @@ from django.db.models import Model
 
 # Create your models here.
 class Cruceros(Model):
-    """
-    Atributos de clase que son usadas por herencia de la clase Model
 
-    """
     companias_choices = [
-      ("ID 1: MSC", "MSC"),
-      ("ID 2: RYG", "RYG"),
-      ("ID 3: Viking", "Viking"),
-      ("ID 4: NCL", "NCL"),
-      ("ID 5: Seabourn", "Seabourn"),
-      ("ID 6: Star Cruises", "Star Cruises"),
-      ("ID 7: Carnival", "Carnival"),
-      ("ID 8: Costa", "Costa"),
-      ("ID 9: AIDA", "AIDA")
+      ("MSC", "MSC"),
+      ("RYG", "RYG"),
+      ("Viking", "Viking"),
+      ("NCL", "NCL"),
+      ("Seabourn", "Seabourn"),
+      ("Star Cruises", "Star Cruises"),
+      ("Carnival", "Carnival"),
+      ("Costa", "Costa"),
+      ("AIDA", "AIDA")
     ]
     
     continentes_choices = [
-      ("ID 1: Sudamerica", "Sudamerica"),
-      ("ID 2: Caribe", "Caribe"),
-      ("ID 3: Europa", "Europa"),
-      ("ID 4: Asia", "Asia")
+      ("Sudamerica", "Sudamerica"),
+      ("Caribe", "Caribe"),
+      ("Europa", "Europa"),
+      ("Asia", "Asia")
     ]
 
     puertos_choices = [
-      ("ID 1: Palermo", "Palermo"),
-      ("ID 2: Bari", "Bari"),
-      ("ID 3: Barcelona", "Barcelona"),
-      ("ID 4: Valencia", "Valencia"),
-      ("ID 5: Marsella", "Marsella"),
-      ("ID 6: Lorient", "Lorient"),
-      ("ID 7: La Habana", "La Habana"),
-      ("ID 8: Puerto Príncipe", "Puerto Príncipe"),
-      ("ID 9: Kingston", "Kingston"),
-      ("ID 10: Hong Kong", "Hong Kong"),
-      ("ID 11: Tokio", "Tokio"),
-      ("ID 12: Buenos Aires", "Buenos Aires"),
-      ("ID 13: Ushuaia", "Ushuaia"),
-      ("ID 14: Rio de Janeiro", "Rio de Janeiro"),
-      ("ID 15: Recife", "Recife")
+      ("Palermo", "Palermo"),
+      ("Bari", "Bari"),
+      ("Barcelona", "Barcelona"),
+      ("Valencia", "Valencia"),
+      ("Marsella", "Marsella"),
+      ("Lorient", "Lorient"),
+      ("La Habana", "La Habana"),
+      ("Puerto Príncipe", "Puerto Príncipe"),
+      ("Kingston", "Kingston"),
+      ("Hong Kong", "Hong Kong"),
+      ("Tokio", "Tokio"),
+      ("Buenos Aires", "Buenos Aires"),
+      ("Ushuaia", "Ushuaia"),
+      ("Rio de Janeiro", "Rio de Janeiro"),
+      ("Recife", "Recife")
     ]
     
     

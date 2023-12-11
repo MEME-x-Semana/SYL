@@ -6,6 +6,7 @@
     <h2>CREAR VIAJE</h2>
     <div class="viajes_create">
       <form method="post">
+          {% csrf_token %}
 
           {% for field in form %}
           <div class="form-field">
