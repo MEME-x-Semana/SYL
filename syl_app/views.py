@@ -1,6 +1,8 @@
 from django.urls import reverse_lazy
 from django.views import View
 
+from django.http import JsonResponse
+
 from django.views.generic.list import ListView
 from django.views.generic.edit import DeleteView, UpdateView, CreateView
 from django.views.generic.detail import DetailView
@@ -39,9 +41,15 @@ class CrucerosUpdateView(CrucerosBaseView,UpdateView):
         "tipo": "Actualizar viaje"
     }
 
-class CrucerosDeleteView(CrucerosBaseView,DeleteView):
-    template_name = "cruceros_delete.html"
-    extra_context = {
-        "tipo": "Borrar viaje"
-    }
+class CrucerosDeleteView(DeleteView):
+# Personalización de la vista DeleteView para que pueda manejar la solicitud DELETE
 
+    model = Cruceros
+    success_url = reverse_lazy('cruceros:all') 
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.delete()
+        
+        # Devuelve una respuesta JSON exitosa 
+        return JsonResponse({'message': 'Registro eliminado correctamente'}, status=200)
