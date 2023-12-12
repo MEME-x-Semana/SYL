@@ -1,17 +1,30 @@
-{% extends 'index.html' %} {% load static %} {% block content %}
+{% extends 'index.html' %}
+{% load static %}
 
+{% block content %}
 
-<main>
-  <section class="viajes_container">
-    <h2>{{cruceros.nombre}}</h2>
-    {% for label, value in cruceros.get_fields %}
+<section class="viajes_container">
+  <div class="card">
+    <div class="card-header">
+      <img src="{% if compania_imagen %}{{ compania_imagen }}{% else %}{% static 'img/default.jpg' %}{% endif %}"
+        alt="Imagen de Compañía">
+    </div>
 
-    <p>{{label | upper}}</p>
-    <p>{{value}}</p>
+    <div class="card-body">
+      <!-- Nombre del crucero -->
+      <span class="name">{{ cruceros.compania }}</span><br>
+      <!-- Tipo de crucero o descripción corta -->
+      <span class="job-title"><u>{{ cruceros.continente }}</u></span>
+      <!-- Descripción detallada del crucero -->
+      <div class="bio">{{ cruceros.puerto }}</div>
+      <!-- Descripción detallada del crucero -->
+      <div class="bio">{{ cruceros.precio }}</div>
+    </div>
+  </div>
 
-    {% endfor %}
+  <div class="btn">
+    <a class="button1" href="{% url 'cruceros:all' %}">Volver</a>
+  </div>
+</section>
 
-    <a href="{% url 'cruceros:all' %}">BACK</a>
-  </section>
-</main>
 {% endblock %}

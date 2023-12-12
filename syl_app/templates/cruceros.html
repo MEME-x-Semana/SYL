@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block extra-head %}
+<script src="{% static 'js/script.js' %}"></script>
 <!-- SweetAlert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -58,7 +59,7 @@
 {% endblock %}
 
 {% block content %}
-<main>
+
   <section class="viajes_container">
     <h2>Viajes</h2>
     <a class="formulario-form-button a_button" href="{% url 'cruceros:create' %}"><strong>+</strong> Agregar viaje</a>
@@ -94,5 +95,5 @@
       <a class="button1" href="{% url 'index' %}">Volver a Home</a>
     </div>
   </section>
-</main>
+
 {% endblock %}

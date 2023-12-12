@@ -41,11 +41,28 @@ class Cruceros(Model):
       ("Recife", "Recife")
     ]
     
+    companias_imagenes = {
+    "MSC": "https://res.cloudinary.com/dciovdqaf/image/upload/v1702415670/MSC_g2ofl3.jpg",
+    "RYG": "https://res.cloudinary.com/dciovdqaf/image/upload/v1702420502/RYG_a2pjfx.jpg",
+    "Viking": "https://res.cloudinary.com/dciovdqaf/image/upload/v1702420502/Viking_gnf7yt.jpg",
+    "NCL": "https://res.cloudinary.com/dciovdqaf/image/upload/v1702420502/NCL_qwwb5n.jpg",
+    "Seabourn": "https://res.cloudinary.com/dciovdqaf/image/upload/v1702420502/Seabourn_op6kwg.jpg",
+    "Star Cruises": "https://res.cloudinary.com/dciovdqaf/image/upload/v1702420501/Star_Cruises_vbbtth.webp",
+    "Carnival": "https://res.cloudinary.com/dciovdqaf/image/upload/v1702420501/Carnival_ax7q9x.jpg",
+    "Costa": "https://res.cloudinary.com/dciovdqaf/image/upload/v1702420501/Costa_jnoysj.jpg",
+    "AIDA": "https://res.cloudinary.com/dciovdqaf/image/upload/v1702420502/AIDA_cky4ot.jpg"
+    }
+
     
     compania   = models.CharField(max_length=100, choices=companias_choices)
     continente = models.CharField(max_length=100, choices=continentes_choices)
     precio     = models.FloatField(null=False, blank=False, default=5000) 
     puerto     = models.CharField(max_length=100, choices=puertos_choices)
+
+    @property
+    def imagen_compania(self):
+        return self.companias_imagenes.get(self.compania, None)
+
 
 
     #metadata
@@ -61,3 +78,4 @@ class Cruceros(Model):
             (field.verbose_name, field.value_from_object(self))
             for field in self.__class__._meta.fields[1:]
         ]
+    

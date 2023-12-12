@@ -2,6 +2,7 @@ from django.urls import reverse_lazy
 from django.views import View
 
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 
 from django.views.generic.list import ListView
 from django.views.generic.edit import DeleteView, UpdateView, CreateView
@@ -26,7 +27,14 @@ class CrucerosListView(CrucerosBaseView,ListView):
     ...
 
 class CrucerosDetailView(CrucerosBaseView,DetailView):
+    model = Cruceros
     template_name = "cruceros_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        crucero = get_object_or_404(Cruceros, pk=self.kwargs['pk'])
+        context['compania_imagen'] = crucero.companias_imagenes.get(crucero.compania)
+        return context
 
 class CrucerosCreateView(CrucerosBaseView,CreateView):
     template_name = "cruceros_create.html"
@@ -36,7 +44,7 @@ class CrucerosCreateView(CrucerosBaseView,CreateView):
 
 
 class CrucerosUpdateView(CrucerosBaseView,UpdateView):
-    template_name = "cruceros_create.html"
+    template_name = "cruceros_update.html"
     extra_context = {
         "tipo": "Actualizar viaje"
     }
