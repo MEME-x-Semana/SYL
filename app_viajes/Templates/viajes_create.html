@@ -1,16 +1,27 @@
-{% extends 'base_viajes.html' %}
+{% extends 'index.html' %} {% load static %}
+
 {% block content %}
 
-<main>
-    <div class="main-color-viajes">
-        <h1>CREAR VIAJE</h1>
-        <form method="post">
-            {% csrf_token %}
-            <div>{{form.as_p}}</div>
-            <input type="submit" value="{{ tipo }}" />
-        </form>
+<section class="viajes_container">
+  <h2>CREAR VIAJE</h2>
+  <div class="viajes_create">
+    <form class="form_app" method="post">
+      {% csrf_token %}
 
-        <a href="{% url 'viajes:all' %}">Volvamos al Inicio</a>
-    </div>
-</main>
+      {% for field in form %}
+      <div class="form-field">
+        {{ field.label_tag }}
+        {{ field }}
+        {{ field.errors }}
+      </div>
+      {% endfor %}
+      <input class="formulario-form-button a_button" type="submit" value="{{ tipo }}" />
+    </form>
+  </div>
+
+  <div class="btn">
+    <a class="button1" href="{% url 'viajes:all' %}">Volver</a>
+  </div>
+</section>
+
 {% endblock %}

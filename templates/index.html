@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-<!-- {% block extra-head %}
-<script src="{% static 'js/index.js' %}" type="module"></script>
-{% endblock %} -->
-
 {% block titulo %}Inicio{% endblock %}
 
 
@@ -35,7 +31,7 @@
         <input placeholder="Password" class="input-field" type="password">
       </div>
       <div class="btn">
-        <a class="button1" href="{% url 'cruceros:all' %}">Login</a>
+        <a class="button1" href="{% url 'viajes:all' %}">Login</a>
       </div>
     </form>
   </section>

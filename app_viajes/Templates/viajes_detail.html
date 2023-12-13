@@ -1,17 +1,26 @@
-{% extends 'base_viajes.html' %}
+{% extends 'index.html' %}
+{% load static %}
+
 {% block content %}
 
-<main>
-    <div class="main-color-viajes">
-        <h1>{{base_viajes.nombre}}</h1>
-        {% for label, value in viajes.get_fields %}
-
-        <p>{{label | upper}}</p>
-        <p>{{value}}</p>
-
-        {% endfor %}
-
-        <a href="{% url 'viajes:all' %}">BACK</a>
+<section class="viajes_container">
+  <div class="contenedor_detail">
+    <div class="contenedor_item">
+      <img class="contenedor_imagen"
+        src="{% if compania_imagen %}{{ compania_imagen }}{% else %}{% static 'img/default.jpg' %}{% endif %}"
+        alt="Imagen de Compañía">
     </div>
-</main>
+  </div>
+
+  <div class="txt_detail">
+    <h5 class="">Empresa: {{ viajes.compania }}</h5>
+    <h5 class=""> Viaja a <u>{{ viajes.continente }}</u></h5>
+    <h5 class=""> Desde {{ viajes.puerto }}</h5>
+    <h5 class="">Valor base: <strong>{{ viajes.precio }}</strong></h5>
+  </div>
+  <div class="btn">
+    <a class="button1" href="{% url 'viajes:all' %}">Volver</a>
+  </div>
+</section>
+
 {% endblock %}
