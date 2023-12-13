@@ -1,43 +1,95 @@
-{% extends 'index.html' %} {% load static %}
+{% extends 'index.html' %}
+{% load static %}
+
+{% block extra-head %}
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  // Script para manejar el clic del enlace
+
+  function confirmarEliminacion(deleteUrl) {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Esta acción eliminará el viaje. ¿Estás seguro de continuar?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(deleteUrl, {
+          method: "DELETE", // El método que uses en tu vista Django para eliminar
+          headers: {
+            "X-CSRFToken": "{{ csrf_token }}", // Asegúrate de enviar el token CSRF si es necesario
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              // Si la eliminación fue exitosa, puedes recargar la página o realizar alguna acción adicional
+              location.reload();
+            } else {
+              // Manejar la respuesta en caso de error
+              console.error("Error al eliminar el registro");
+            }
+          })
+          .catch((error) => {
+            // Manejar errores de red u otros problemas
+            console.error("Error:", error);
+          });
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".button2[data-delete-url]");
+    links.forEach((link) => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const deleteUrl = this.getAttribute("data-delete-url");
+        confirmarEliminacion(deleteUrl);
+      });
+    });
+  });
+
+
+</script>
+
+{% endblock %}
 
 {% block content %}
 <main>
   <section class="viajes_container">
     <h2>Viajes</h2>
-    <a class="formulario-form-button a_button" href="{% url 'cruceros:create' %}">Agregar viaje</a>
+    <a class="formulario-form-button a_button" href="{% url 'cruceros:create' %}"><strong>+</strong> Agregar viaje</a>
 
     {% for cruceros in cruceros_list %}
     <div class="list">
-
-      <ul class="crucero_lista">
-        <li>Empresa: {{cruceros.compania}}</li>
-        <li>Continente al que viaja: {{cruceros.continente}}</li>
-        <li>Puerto del que sale: {{cruceros.puerto}}</li>
-        <li><strong>Precio del viaje: {{cruceros.precio}}</strong></li>
-      </ul>
-
-      <span>
-        <p>{{forloop.counter}}</p>
-      </span>
-      <span>
-        <p>{{cruceros.nombre}}</p>
+      <span class="circle_conteiner">
+        <h4 class="circle">{{forloop.counter}}</h4>
       </span>
 
-      <span>
-        <label for="">Detalle: </label>
-        <a href="{% url 'cruceros:detail' cruceros.id %}">Detalle</a>
-      </span>
-      <span>
-        <label for="">Editar: </label>
-        <a href="{% url 'cruceros:update' cruceros.id %}">Editar</a>
-      </span>
-      <span>
-        <label for="">Borrar: </label>
-        <a href="{% url 'cruceros:delete' cruceros.id %}">Borrar</a>
-      </span>
+      <div class="card_list">
+        <h5> Viaje a {{cruceros.continente}}</h5>
+        <p> Desde {{cruceros.puerto}}</p>
+      </div>
+
+      <div class="buttons_list">
+        <span>
+          <a class="button2" href="{% url 'cruceros:detail' cruceros.id %}">Detalle</a>
+        </span>
+        <span>
+          <a class="button2" href="{% url 'cruceros:update' cruceros.id %}">Editar</a>
+        </span>
+        <span>
+          <!-- Asignamos la URL a un atributo de datos -->
+          <a class="button2" href="#" data-delete-url="{% url 'cruceros:delete' cruceros.id %}"
+            class="delete-button">Borrar</a>
+        </span>
+      </div>
     </div>
-
     {% endfor %}
+
     <div class="btn">
       <a class="button1" href="{% url 'index' %}">Volver a Home</a>
     </div>

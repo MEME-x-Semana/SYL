@@ -43,6 +43,13 @@ h3 {
   color: var(--color-primary);
 }
 
+h4 {
+  text-align: center;
+  margin: 10px ;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+}
+
 
 .video{
   display: none;
