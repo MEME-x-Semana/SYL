@@ -2,40 +2,46 @@
 {% load static %}
 
 {% block extra-head %}
-<script src="{% static 'js/script.js' %}"></script>
-<!-- SweetAlert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-  // Script para manejar el clic del enlace
+  // Script para manejar el metodo delete en el enlace "Borrar", usando SweetAlert
 
   function confirmarEliminacion(deleteUrl) {
     Swal.fire({
       title: "¿Estás seguro?",
       text: "Esta acción eliminará el viaje. ¿Estás seguro de continuar?",
       icon: "warning",
+      iconColor: "#f34312",
       showCancelButton: true,
+      confirmButtonColor: "rgb(74, 124, 0)",
+      cancelButtonColor: "rgb(124, 0, 25)",
       confirmButtonText: "Sí, eliminar",
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(deleteUrl, {
-          method: "DELETE", // El método que uses en tu vista Django para eliminar
+          method: "DELETE", 
           headers: {
-            "X-CSRFToken": "{{ csrf_token }}", // Asegúrate de enviar el token CSRF si es necesario
+            "X-CSRFToken": "{{ csrf_token }}", 
           },
         })
           .then((response) => {
             if (response.ok) {
-              // Si la eliminación fue exitosa, puedes recargar la página o realizar alguna acción adicional
-              location.reload();
+              Swal.fire({
+                title: '¡Borrado con éxito!',
+                icon: 'success',
+                iconColor: "rgb(74, 124, 0)",
+                showConfirmButton: false,
+                timer: 1500
+              }).then(() => {
+                location.reload();
+              });
             } else {
-              // Manejar la respuesta en caso de error
               console.error("Error al eliminar el registro");
             }
           })
           .catch((error) => {
-            // Manejar errores de red u otros problemas
             console.error("Error:", error);
           });
       }
