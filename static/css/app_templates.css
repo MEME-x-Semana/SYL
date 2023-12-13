@@ -128,7 +128,46 @@
 }
 
 /* Diseño de CREATE/UPDATE */
-viajes_create
+.viajes_create{
+  position: relative;
+  width: auto;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.form_app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.form_app div {
+  width: 300px;
+  height: 37.33px;
+  flex-shrink: 0;
+  color: white;
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: -23px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+select,
+input {
+  background-color: rgba(217, 217, 217, 0.2);
+  border: 3px solid white;
+  border-radius: 8px;
+  width: 300px;
+  height: 38px;
+  padding: auto;
+  color: rgb(86, 86, 86);
+}
 
 
 /* Diseño de DETAIL */
