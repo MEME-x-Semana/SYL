@@ -8,8 +8,4 @@ venv/
 
 __pycache__/
 *.pyc
-<<<<<<< HEAD
 *.pyo
-=======
-*.pyo
->>>>>>> origin/dev_flafla2.0

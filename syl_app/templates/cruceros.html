@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block extra-head %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  // Script para manejar el metodo delete en el enlace "Borrar", usando SweetAlert
+
+  function confirmarEliminacion(deleteUrl) {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Esta acción eliminará el viaje. ¿Estás seguro de continuar?",
+      icon: "warning",
+      iconColor: "#f34312",
+      showCancelButton: true,
+      confirmButtonColor: "rgb(74, 124, 0)",
+      cancelButtonColor: "rgb(124, 0, 25)",
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(deleteUrl, {
+          method: "DELETE", 
+          headers: {
+            "X-CSRFToken": "{{ csrf_token }}", 
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              Swal.fire({
+                title: '¡Borrado con éxito!',
+                icon: 'success',
+                iconColor: "rgb(74, 124, 0)",
+                showConfirmButton: false,
+                timer: 1500
+              }).then(() => {
+                location.reload();
+              });
+            } else {
+              console.error("Error al eliminar el registro");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".button2[data-delete-url]");
+    links.forEach((link) => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const deleteUrl = this.getAttribute("data-delete-url");
+        confirmarEliminacion(deleteUrl);
+      });
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+  <section class="viajes_container">
+    <h2>Viajes</h2>
+    <a class="formulario-form-button a_button" href="{% url 'cruceros:create' %}"><strong>+</strong> Agregar viaje</a>
+
+    {% for cruceros in cruceros_list %}
+    <div class="list">
+      <span class="circle_conteiner">
+        <h4 class="circle">{{forloop.counter}}</h4>
+      </span>
+
+      <div class="card_list">
+        <h5> Viaje a {{cruceros.continente}}</h5>
+        <p> Desde {{cruceros.puerto}}</p>
+      </div>
+
+      <div class="buttons_list">
+        <span>
+          <a class="button2" href="{% url 'cruceros:detail' cruceros.id %}">Detalle</a>
+        </span>
+        <span>
+          <a class="button2" href="{% url 'cruceros:update' cruceros.id %}">Editar</a>
+        </span>
+        <span>
+          <!-- Asignamos la URL a un atributo de datos -->
+          <a class="button2" href="#" data-delete-url="{% url 'cruceros:delete' cruceros.id %}"
+            class="delete-button">Borrar</a>
+        </span>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="btn">
+      <a class="button1" href="{% url 'index' %}">Volver a Home</a>
+    </div>
+  </section>
+
+{% endblock %}
