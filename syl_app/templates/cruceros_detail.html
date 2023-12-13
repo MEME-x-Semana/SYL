@@ -4,21 +4,19 @@
 {% block content %}
 
 <section class="viajes_container">
-  <div class="card">
-    <div class="card-header">
-      <img src="{% if compania_imagen %}{{ compania_imagen }}{% else %}{% static 'img/default.jpg' %}{% endif %}"
+  <div class="contenedor_detail">
+    <div class="contenedor_item">
+      <div class="contenido_detail">
+        <div>
+          <h4 class="">Empresa: {{ cruceros.compania }}</h4><br>
+          <h5 class=""> Viaja a <u>{{ cruceros.continente }}</u></h5>
+          <h5 class=""> Desde {{ cruceros.puerto }}</h5>
+          <h5 class="">Valor base: <strong>{{ cruceros.precio }}</strong></h5>
+        </div>
+      </div>
+      <img class="contenedor_img"
+        src="{% if compania_imagen %}{{ compania_imagen }}{% else %}{% static 'img/default.jpg' %}{% endif %}"
         alt="Imagen de Compañía">
-    </div>
-
-    <div class="card-body">
-      <!-- Nombre del crucero -->
-      <span class="name">{{ cruceros.compania }}</span><br>
-      <!-- Tipo de crucero o descripción corta -->
-      <span class="job-title"><u>{{ cruceros.continente }}</u></span>
-      <!-- Descripción detallada del crucero -->
-      <div class="bio">{{ cruceros.puerto }}</div>
-      <!-- Descripción detallada del crucero -->
-      <div class="bio">{{ cruceros.precio }}</div>
     </div>
   </div>
 

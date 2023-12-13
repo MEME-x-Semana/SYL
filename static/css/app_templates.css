@@ -49,7 +49,7 @@
   text-decoration: none;
 }
 
-.card_list{
+.card_list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,70 +122,64 @@
   box-shadow: inset 1px 3px 8px rgba(0, 19, 29, 0.616);
 }
 
-.btn{
+.btn {
   margin: 2rem;
 }
 
-
 /* Diseño de DETAIL */
-.card {
+.contenedor_detail {
   position: relative;
-  width: 315px;
-  height: 450px;
-  margin: 30px auto;
-  box-shadow: 0 0 100px rgba(0,0,0, .3);
-  border-radius: 10px;
+  width: 30rem;
+  height: 25rem;
+  margin-top: 5rem;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
 }
-
-.card-header {
+.contenedor_item{
+  width: 80%;
   position: relative;
-  height: 220px;
-  background-size: cover;
-  background-position: top;
+  margin: auto;
+  margin-bottom: 20px;
 }
-
-.card-header:after {
-  content: '';
-  position: absolute;
+.contenedor_item:before{
+  content: "";
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgb(5,85,134), rgba(181,181,181, -0.20));
-  border-radius: 10px;
-}
-
-.company-image {
   position: absolute;
-  margin-top: 100px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #222;
-  font-size: 20px;
-  font-weight: 400;
+  top: 0;
+  right: 0;
+  background: black;
 }
 
-.card-body {
-  text-align: center;
-  padding-left: 10px;
+.contenedor-imagen {
+  width: 100%;
+  display: block;
 }
 
-.name {
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0 auto;
+/*
+
+ .contenedor-imagen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+} 
+
+.img-crucero {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
-.job-title {
-  font-size: 14px;
-  font-weight: 300;
-  margin-top: 15px;
-  color: #919191;
+.contenido_detail {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 30%);
+  border-radius: 0 0 12px 12px; 
+  color: #000; 
 }
 
-.bio {
-  font-size: 14px;
-  color: #7B7B7B;
-  font-weight: 300;
-  margin: 10px auto;
-  line-height: 20px;
-}
+*/
