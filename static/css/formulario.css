@@ -31,7 +31,6 @@
 .formulario-form-correo input {
   width: 100%;
   height: 40px;
-  border: none;
   border-radius: 10px;
   border: 1px solid #ffffff64;
   box-shadow: #9c650c 1px 1px 1px 1px;
@@ -51,7 +50,6 @@
 
 .formulario-form-mensaje textarea {
   font-family: var(--font-secondary);
-  border: none;
   border-radius: 10px;
   border: 1px solid #ffffff64;
   box-shadow: #9c650c 1px 1px 1px 1px;

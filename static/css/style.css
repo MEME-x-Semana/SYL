@@ -8,6 +8,7 @@
 @import "./testimonios.css";
 @import "./formulario.css";
 @import "./footer.css";
+@import "./app_templates.css";
 
 * {
   margin: 0;
@@ -31,6 +32,13 @@ main {
 section h2 {
   text-align: left;
   margin: 60px 5px 15px 10px ;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+}
+
+h3 {
+  text-align: center;
+  margin: 15px 5px 15px 10px ;
   font-family: var(--font-primary);
   color: var(--color-primary);
 }
