@@ -21,9 +21,7 @@ class ViajesBaseView(View):
 
 
 class ViajesListView(ViajesBaseView,ListView):
-    """
-    ESTO ME PERMITE CREAR UNA VISTA CON LOS VIAJES
-    """
+    template_name = 'viajes.html'
     ...
 
 class ViajesDetailView(ViajesBaseView,DetailView):
