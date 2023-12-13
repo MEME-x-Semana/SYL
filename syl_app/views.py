@@ -44,9 +44,9 @@ class CrucerosCreateView(CrucerosBaseView,CreateView):
 
 
 class CrucerosUpdateView(CrucerosBaseView,UpdateView):
-    template_name = "cruceros_update.html"
+    template_name = "cruceros_create.html"
     extra_context = {
-        "tipo": "Actualizar viaje"
+        "tipo": "Actualizar"
     }
 
 class CrucerosDeleteView(DeleteView):
