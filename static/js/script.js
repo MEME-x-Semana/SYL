@@ -1,9 +1,8 @@
-// Barra de navegación
+// Carrusel
 
 document.addEventListener("DOMContentLoaded", function () {
   const sliderContainer = document.querySelector("#carouselExample");
   const nextNav = document.querySelector(".carousel-control-next");
-  const prevNav = document.querySelector(".carousel-control-prev");
   const interval = 3000;
   let slideTimer;
 
@@ -16,12 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
   function stopSlideTimer() {
     clearInterval(slideTimer);
   }
-
+if (nextNav && sliderContainer) {
   startSlideTimer();
+}
+
+  
 
   sliderContainer.addEventListener("mouseover", stopSlideTimer);
 
   sliderContainer.addEventListener("mouseout", startSlideTimer);
+
+  console.log(nextNav);
+
 });
 
 

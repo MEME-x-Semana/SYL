@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 # Le indica a Django que va a haber una app con este nombre
-CUSTOM_APPS = ["syl_app"]
+CUSTOM_APPS = ["app_viajes"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",

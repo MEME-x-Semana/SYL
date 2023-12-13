@@ -7,5 +7,5 @@ from .views import IndexPage
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", IndexPage.as_view(), name="index"),
-    path("cruceros/", include("syl_app.urls")),
+    path("viajes/", include("app_viajes.urls")),
 ]
