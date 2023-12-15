@@ -53,9 +53,10 @@ class Viajes(Model):
     }
 
     compania = models.CharField(max_length=100, choices=companias_choices, default=companias_choices[0][0])
-    continente = models.CharField(max_length=100, choices=continentes_choices)
+    continente = models.CharField(max_length=100, choices=continentes_choices, default=continentes_choices[0][0])
     precio = models.FloatField(null=False, blank=False, default=5000)
-    puerto = models.CharField(max_length=100, choices=puertos_choices)
+    puerto = models.CharField(max_length=100, choices=puertos_choices, default=puertos_choices[0][0])
+
 
     @property
     def imagen_compania(self):
