@@ -38,11 +38,7 @@ El frontend se realizó utilizando HTML, CSS, JavaScript y Bootstrap. Se asegur�
 
 
 ## Deploy
-Se realizó un deploy inicial en PythonAnywhere.
-
-
-## Problemas Actuales
-- Problemas encontrados durante el despliegue en Python Anywhere, actualmente en proceso de resolución.
+Se realizó el deploy en PythonAnywhere.
 
 
 ## Referencias
