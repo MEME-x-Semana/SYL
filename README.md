@@ -1,6 +1,6 @@
 ![Texto Alternativo](https://res.cloudinary.com/dciovdqaf/image/upload/v1702669538/Portada_smogaf.png)
 
-# Documentación del Proyecto de Desarrollo Web "See You Later"
+# Documentación del Proyecto FullStack - Python: "See You Later"
 
 ## Introducción
 Este repositorio contiene la documentación detallada del proyecto de desarrollo web "See You Later", realizado como parte del curso/beca de "Codo a Codo": Full Stack Python 2023. Nuestro equipo, compuesto por cuatro miembros, trabajó de manera colaborativa en la creación de una página tipo landing page para la agencia ficticia de cruceros "See You Later", con el propósito de vender pasajes de cruceros de distintas compañías.
